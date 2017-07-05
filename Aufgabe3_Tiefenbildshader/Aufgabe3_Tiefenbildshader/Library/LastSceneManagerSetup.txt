@@ -1,4 +1,4 @@
 sceneSetups:
-- path: C:/Users/daniel.waldenmaier/Downloads/Uebung2_VertexShader_sol/Assets/MainScene.unity
+- path: Assets/Tiefenbildkamera.unity
   isLoaded: 1
   isActive: 1
