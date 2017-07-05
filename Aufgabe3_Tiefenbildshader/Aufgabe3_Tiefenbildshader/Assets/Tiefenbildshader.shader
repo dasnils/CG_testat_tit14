@@ -19,7 +19,11 @@
 			
 			#include "UnityCG.cginc"
 
-			struct appdata
+			struct VertexkoordinatenEingabe {
+				float4 vertex POSITION;
+			}
+
+/*			struct appdata
 			{
 				float4 vertex : POSITION;
 				float2 uv : TEXCOORD0;
@@ -52,6 +56,7 @@
 				UNITY_APPLY_FOG(i.fogCoord, col);
 				return col;
 			}
+*/
 			ENDCG
 		}
 	}
