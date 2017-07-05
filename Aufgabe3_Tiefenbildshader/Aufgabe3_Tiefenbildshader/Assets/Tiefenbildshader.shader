@@ -41,6 +41,7 @@
 
 			float4 frag (vertexkoordinatenAusgabe eingabe) : COLOR
 			{
+				float maxDistanz;
 				float distanz = distance(eingabe.posInWorldspace, _WorldSpaceCameraPos);
 				float normalisiert = 1 - (1 / distanz);
 				return float4 (normalisiert, normalisiert, normalisiert, 1.0);
