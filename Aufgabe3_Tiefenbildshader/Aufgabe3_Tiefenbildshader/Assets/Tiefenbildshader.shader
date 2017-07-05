@@ -23,6 +23,12 @@
 				float4 vertex POSITION;
 			}
 
+			struct VertexkoordinatenAusgabe {
+				float4 position : SV_POSITION;
+				float4 posInWorldspace : TEXCOORD0;
+			}
+
+
 /*			struct appdata
 			{
 				float4 vertex : POSITION;
