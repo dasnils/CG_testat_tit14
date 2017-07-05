@@ -19,28 +19,31 @@
 			
 			#include "UnityCG.cginc"
 
-			struct VertexkoordinatenEingabe {
-				float4 vertex POSITION;
-			}
+			struct vertexkoordinatenEingabe {
+				float4 vertex : POSITION;
+			};
 
-			struct VertexkoordinatenAusgabe {
+			struct vertexkoordinatenAusgabe {
 				float4 position : SV_POSITION;
 				float4 posInWorldspace : TEXCOORD0;
-			}
+			};
 
-			VertexkoordinatenAusgabe vert(VertexkoordinatenEingabe eingabe)
+			vertexkoordinatenAusgabe vert(vertexkoordinatenEingabe eingabe)
 			{
-				VertexkoordinatenAusgabe ausgabe;
-				ausgabe.position = UnityObjectToClipPos (eingabe.vertex);
-				ausgabe.posInWorldspace = mul (unity_ObjectToWorld, eingabe.vertex);
+				vertexkoordinatenAusgabe ausgabe;
+				ausgabe.position = UnityObjectToClipPos(eingabe.vertex);
+				            
+				ausgabe.posInWorldspace = 
+					mul(unity_ObjectToWorld, eingabe.vertex);
+
 				return ausgabe;
 			}
 
-			float4 fl (VertexkoordinatenAusgabe eingabe) : COLOR
+			float4 frag (vertexkoordinatenAusgabe eingabe) : COLOR
 			{
 				float distanz = distance(eingabe.posInWorldspace, _WorldSpaceCameraPos);
-
-				return float4 (distanz, distanz, distanz, 1.0);
+				float normalisiert = 1 - (1 / distanz);
+				return float4 (normalisiert, normalisiert, normalisiert, 1.0);
 			}
 
 /*			struct appdata
