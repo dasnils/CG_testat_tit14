@@ -36,6 +36,13 @@
 				return ausgabe;
 			}
 
+			float4 fl (VertexkoordinatenAusgabe eingabe) : COLOR
+			{
+				float distanz = distance(eingabe.posInWorldspace, _WorldSpaceCameraPos);
+
+				return float4 (distanz, distanz, distanz, 1.0);
+			}
+
 /*			struct appdata
 			{
 				float4 vertex : POSITION;
