@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Tiefenbildkamera.unity
+  isLoaded: 1
+  isActive: 1
