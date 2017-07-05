@@ -1,4 +1,4 @@
 sceneSetups:
-- path: C:/Users/DANIEL~1.WAL/AppData/Local/Temp/Uebung1_Einfuehrung_sol/Assets/TeaPots.unity
+- path: C:/Users/daniel.waldenmaier/Downloads/Uebung2_VertexShader_sol/Assets/MainScene.unity
   isLoaded: 1
   isActive: 1
