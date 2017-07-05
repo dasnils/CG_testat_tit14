@@ -32,7 +32,8 @@
 			{
 				vertexkoordinatenAusgabe ausgabe;
 				ausgabe.position = UnityObjectToClipPos(eingabe.vertex);
-				            
+				// Vertex Eingabedaten der Objekte transformieren
+				// Koordinaten in Welt Koordinaten umwandeln 
 				ausgabe.posInWorldspace = 
 					mul(unity_ObjectToWorld, eingabe.vertex);
 
@@ -41,15 +42,22 @@
 
 			float4 frag (vertexkoordinatenAusgabe eingabe) : COLOR
 			{
+				// Einstellbare maximale Entfernung
 				float maxDistanz = 15.0;
+				// Distanz: Berechnung der Distanz zwischen Objekt und Kamera
 				float distanz = distance(eingabe.posInWorldspace, _WorldSpaceCameraPos);
+				// Normalisieren: Distanz in Wert zwischen 0 (weiß) und 1 (schwarz) umwandeln
 				float normalisiert = (distanz / maxDistanz) ;
 
+				// Wenn Distanz größer als max. Entfernung ist wird direkt weiß ausgegeben
 				if(distanz > maxDistanz) 
 				{
 					return float4 (1.0, 1.0, 1.0, 1.0);
 				}
 
+				// Wenn Distanz kleiner max. Entfernung ist wird der Graustufenwert ausgegeben:
+				// 0.0,0.0,0.0,1.0 ist schwarz	(Distanz = 0)
+				// 1.0,1.0,1.0,1.0 ist weiß		(Distanz = maxDistanz)
 				else  
 				{
 					return float4 (normalisiert, normalisiert, normalisiert, 1.0);
