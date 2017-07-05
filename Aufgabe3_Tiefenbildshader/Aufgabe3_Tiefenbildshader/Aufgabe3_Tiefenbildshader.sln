@@ -1,12 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufgabe3_Tiefenbildshader", "Aufgabe3_Tiefenbildshader.csproj", "{D780C800-46D7-F19C-62B8-6606C463EB68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D780C800-46D7-F19C-62B8-6606C463EB68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D780C800-46D7-F19C-62B8-6606C463EB68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D780C800-46D7-F19C-62B8-6606C463EB68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D780C800-46D7-F19C-62B8-6606C463EB68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

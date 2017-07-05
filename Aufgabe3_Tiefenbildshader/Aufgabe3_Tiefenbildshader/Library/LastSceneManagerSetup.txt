@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Tiefenbildkamera.unity
+- path: C:/Users/DANIEL~1.WAL/AppData/Local/Temp/Uebung1_Einfuehrung_sol/Assets/TeaPots.unity
   isLoaded: 1
   isActive: 1
