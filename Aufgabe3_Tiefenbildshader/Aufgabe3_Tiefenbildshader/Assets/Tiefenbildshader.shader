@@ -28,6 +28,13 @@
 				float4 posInWorldspace : TEXCOORD0;
 			}
 
+			VertexkoordinatenAusgabe vert(VertexkoordinatenEingabe eingabe)
+			{
+				VertexkoordinatenAusgabe ausgabe;
+				ausgabe.position = UnityObjectToClipPos (eingabe.vertex);
+				ausgabe.posInWorldspace = mul (unity_ObjectToWorld, eingabe.vertex);
+				return ausgabe;
+			}
 
 /*			struct appdata
 			{
