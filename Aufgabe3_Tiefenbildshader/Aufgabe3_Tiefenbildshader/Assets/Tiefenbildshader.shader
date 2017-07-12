@@ -49,7 +49,7 @@
 				float distanz = distance(eingabe.posInWorldspace, _WorldSpaceCameraPos);
 
 				// Normalisieren: Distanzverhältnis zu max. Entfernung in Verzältniswert 
-				// zwischen 0 (weiß) und 1 (schwarz) umwandeln
+				// zwischen 0 (schwarz) und 1 (weiß) umwandeln
 				float normalisiert = (distanz / maxDistanz) ;
 
 				// Wenn Distanz größer als max. Entfernung ist wird direkt weiß ausgegeben
