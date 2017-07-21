@@ -48,12 +48,21 @@
 			
 			fixed4 frag (v2f i) : COLOR
 			{
-				
+				float maxDistanz = 10.0;  //Basiswert für Normalisierung
+
 				float heat_obj_distance = distance(i.uv, _ThermalSourcePos);   //Distanz zwischen Heatsource und Objekt
 
-				// sample the texture
-				fixed4 col = tex2D(_MainTex, i.uv);
-				return col;
+				float normalisiert = (heat_obj_distance / maxDistanz) ;
+
+				if(heat_obj_distance > maxDistanz) 
+				{
+					return float4 (1.0, 1.0, 1.0, 1.0);
+				}
+
+				else  
+				{
+					return float4 (normalisiert, normalisiert, normalisiert, 1.0);
+				}
 			}
 			ENDCG
 		}
