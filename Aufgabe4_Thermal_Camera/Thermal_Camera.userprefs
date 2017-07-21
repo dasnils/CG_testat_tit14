@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\Downloads\Uebung2_VertexShader_sol\Assets\ForceFieldExercise\ForceFieldSimulator.cs">
+    <Files>
+      <File FileName="Assets\heat_shader.shader" Line="43" Column="24" />
+      <File FileName="..\..\Downloads\Uebung2_VertexShader_sol\Assets\ForceFieldExercise\ForceFieldShader.shader" Line="73" Column="1" />
+      <File FileName="..\..\Downloads\Uebung2_VertexShader_sol\Assets\ForceFieldExercise\ForceFieldSimulator.cs" Line="9" Column="32" />
+      <File FileName="..\..\Downloads\Uebung2_VertexShader_sol\Assets\ForceFieldExercise\CubeMeshRenderScript.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
