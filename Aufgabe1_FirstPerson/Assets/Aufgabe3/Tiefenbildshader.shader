@@ -43,7 +43,7 @@
 			float4 frag (vertexkoordinatenAusgabe eingabe) : COLOR
 			{
 				// Einstellbare maximale Entfernung
-				float maxDistanz = 15.0;
+				float maxDistanz = 30.0;
 
 				// Distanz: Berechnung der Distanz zwischen Objekt und Kamera
 				float distanz = distance(eingabe.posInWorldspace, _WorldSpaceCameraPos);
