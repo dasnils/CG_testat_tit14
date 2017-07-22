@@ -2,7 +2,7 @@
 {
 	Properties
 	{
-		_MainTex ("Texture", 2D) = "white" {}
+		
 		_ThermalSourcePos ("Position der Wärmequelle",Vector) = (0,0,0)
 		_Color("Farbe", Color) = (1,1,1,1)
 	}
@@ -32,7 +32,7 @@
 				float4 vertex : SV_POSITION;
 			};
 
-			sampler2D _MainTex;
+			
 			float4 _MainTex_ST;
 			float4 _ThermalSourcePos;
 			float4 _ThermalSourceVector;
