@@ -6,8 +6,8 @@ using Random = UnityEngine.Random;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
-    [RequireComponent(typeof (CharacterController))]
-    [RequireComponent(typeof (AudioSource))]
+    [RequireComponent(typeof(CharacterController))]
+    [RequireComponent(typeof(AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
@@ -42,6 +42,31 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        //get all GameObjects to change materials
+        //GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
+
+        //get all the materials to change them during runtime
+        public Material depthImage;
+        public Material regular;
+        public Material flir;
+        public Material grey;
+        // public Material[] mats = GetComponent<Renderer>().materials;
+
+        public GameObject plane;
+
+        public GameObject cube1;
+        public GameObject cube2;
+        public GameObject cube3;
+        public GameObject cube4;
+        private GameObject[] cubes;
+
+        public GameObject wall1;
+        public GameObject wall2;
+        public GameObject wall3;
+        public GameObject wall4;
+        private GameObject[] walls;
+
+
         // Use this for initialization
         private void Start()
         {
@@ -55,10 +80,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+            cubes = new GameObject[4];
+            walls = new GameObject[4];
+            cubes[0] = cube1;
+            cubes[1] = cube2;
+            cubes[2] = cube3;
+            cubes[3] = cube4;
+
+            walls[0] = wall1;
+            walls[1] = wall2;
+            walls[2] = wall3;
+            walls[3] = wall4;
+
+
+
         }
 
 
         // Update is called once per frame
+        // added Input for keys 1-3
         private void Update()
         {
             RotateView();
@@ -81,8 +122,40 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                changeMaterials(regular);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                changeMaterials(grey);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                changeMaterials(depthImage);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                changeMaterials(flir);
+            }
         }
 
+        private void changeMaterials(Material newMaterial)
+        {
+
+           foreach(GameObject wall in walls)
+            {
+                wall.GetComponent<Renderer>().material = newMaterial;
+            }
+
+           foreach(GameObject cube in cubes)
+            {
+                cube.GetComponent<Renderer>().material = newMaterial;
+            }
+
+           plane.GetComponent<Renderer>().material = newMaterial;
+        }
 
         private void PlayLandingSound()
         {
