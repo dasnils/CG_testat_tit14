@@ -41,17 +41,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
-
-        //get all GameObjects to change materials
-        //GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
-
+        
         //get all the materials to change them during runtime
         public Material depthImage;
         public Material regular;
         public Material flir;
         public Material grey;
-        // public Material[] mats = GetComponent<Renderer>().materials;
-
+        
         public GameObject plane;
 
         public GameObject cube1;
@@ -99,7 +95,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 
         // Update is called once per frame
-        // added Input for keys 1-3
+        // added Input for keys 1-4
         private void Update()
         {
             RotateView();
