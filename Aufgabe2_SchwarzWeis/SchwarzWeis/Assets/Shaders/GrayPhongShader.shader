@@ -1,6 +1,4 @@
-﻿
-
-Shader "Unlit/GrayPhongShader"
+﻿Shader "Unlit/GrayPhongShader"
 {
 	// Tutorial - Vertex und Fragment Shader examples: https://docs.unity3d.com/Manual/SL-VertexFragmentShaderExamples.html 
 
@@ -122,7 +120,12 @@ Shader "Unlit/GrayPhongShader"
 				color *= _Ka*fragIn.amb + _Kd*fragIn.diff;
 				color += _Ks*fragIn.spec;
 
-                return saturate(color);
+				// In Graustufen umwandeln
+				fixed4 gray = color;		// gray zuweisen 
+					gray.r = (color.r + color.g + color.b) / 3;		//gray-wert durch rgb-werte berechnen
+					gray.g = gray.r;	// neuen gray-wert zuweisen
+					gray.b = gray.r;	// neuen gray-wert zuweisen
+                return saturate(gray);		// gray als color zurückgeben
 			}
 			ENDCG
 		}
