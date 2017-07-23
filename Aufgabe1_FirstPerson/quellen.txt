@@ -1,0 +1,9 @@
+http://answers.unity3d.com/questions/329395/how-to-get-all-gameobjects-in-scene.html
+
+http://answers.unity3d.com/questions/1011015/change-material-during-runtime-c.html
+
+https://docs.unity3d.com/ScriptReference/Input.html
+
+https://www.youtube.com/watch?v=MGIBLPIz4oM&t=335s
+
+https://docs.unity3d.com/ScriptReference/KeyCode.html
