@@ -64,7 +64,11 @@
 				// Greife den pixel der Textur an der Stelle (u;v) ab und setze ihn als Farbe.
                 fixed4 color = tex2D(_MainTex, fragIn.uv);
 
-                return color;
+                fixed4 gray = color; 	// gray zuweisen
+                gray.r = (color.r + color.g + color.b) / 3;		// gray-wert durch rgb-wert berechnen
+                gray.g = gray.r;		// neuen gray-wert zuweisen
+                gray.b = gray.r;		// neuen gray wert-zuweisen
+                return gray;	// gray als color zurückgeben
 			}
 			ENDCG
 		}
