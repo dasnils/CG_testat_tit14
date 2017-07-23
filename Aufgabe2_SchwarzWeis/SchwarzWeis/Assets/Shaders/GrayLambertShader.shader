@@ -1,4 +1,4 @@
-﻿Shader "Unlit/LambertShader_DirLight"
+﻿Shader "Unlit/GrayLambertShader"
 {
 	// Tutorial - Vertex und Fragment Shader examples: https://docs.unity3d.com/Manual/SL-VertexFragmentShaderExamples.html 
 
@@ -97,12 +97,19 @@
 			{
 				// Greife den pixel der Textur an der Stelle (u;v) ab und setze ihn als Farbe.
                 fixed4 color = _Color;
-				
+
 				// Multiplikation der Grundfarbe mit dem Ambienten- und dem Diffusions-Anteil
 				// Der Diffuse und Ambiente Anteil wird jeweils mit der entsprechenden Reflektanz der Oberfläche (_Ka, _Kd) gewichtet.
 				color *= (_Ka*fragIn.amb +  _Kd*fragIn.diff);
-
-                return color;
+				
+				//Color in andere GrayscaleVariable speichern
+				fixed4 lambertGrayscale = color;
+				//RGB auf Mittelwert der einzelnen Werte setzen
+				lambertGrayscale.r = (color.r + color.g + color.b) / 3; //RGB Addieren, Mittelwert bilden und in R speichern
+				lambertGrayscale.g = lambertGrayscale.r; //Mittelwert in G speichern
+				lambertGrayscale.b = lambertGrayscale.r; //Mittelwert in B speichern
+				
+                return lambertGrayscale; //LambertGrayscale zurückgeben -> Graustufen
 			}
 			ENDCG
 		}
