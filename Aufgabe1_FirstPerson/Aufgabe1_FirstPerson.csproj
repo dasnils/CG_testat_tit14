@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\PlayerScripts\MoveBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Aufgabe2\GrayTextureShader.shader" />
     <None Include="Assets\Aufgabe3\Tiefenbildshader.shader" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />

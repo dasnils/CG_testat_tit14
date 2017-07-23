@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufgabe1_FirstPerson.Plugins", "Aufgabe1_FirstPerson.Plugins.csproj", "{83E3FE09-E6ED-41D5-37E2-E16CF7FAC6F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufgabe1_FirstPerson", "Aufgabe1_FirstPerson.csproj", "{494F6567-ADA9-723F-9C62-95B14953CA91}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufgabe1_FirstPerson.Editor.Plugins", "Aufgabe1_FirstPerson.Editor.Plugins.csproj", "{104C5C29-E477-62AD-1440-6171B379B5B3}"
 EndProject
 Global
@@ -17,10 +15,6 @@ Global
 		{83E3FE09-E6ED-41D5-37E2-E16CF7FAC6F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83E3FE09-E6ED-41D5-37E2-E16CF7FAC6F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83E3FE09-E6ED-41D5-37E2-E16CF7FAC6F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{494F6567-ADA9-723F-9C62-95B14953CA91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{494F6567-ADA9-723F-9C62-95B14953CA91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{494F6567-ADA9-723F-9C62-95B14953CA91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{494F6567-ADA9-723F-9C62-95B14953CA91}.Release|Any CPU.Build.0 = Release|Any CPU
 		{104C5C29-E477-62AD-1440-6171B379B5B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{104C5C29-E477-62AD-1440-6171B379B5B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{104C5C29-E477-62AD-1440-6171B379B5B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
