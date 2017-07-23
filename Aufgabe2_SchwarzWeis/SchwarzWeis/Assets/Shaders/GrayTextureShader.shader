@@ -1,5 +1,8 @@
-﻿Shader "Unlit/NewUnlitShader 2"
+﻿Shader "Unlit/GrayTextureShader"
 {
+
+	// Tutorial - Vertex und Fragment Shader examples: https://docs.unity3d.com/Manual/SL-VertexFragmentShaderExamples.html 
+
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
@@ -7,50 +10,61 @@
 	SubShader
 	{
 		Tags { "RenderType"="Opaque" }
-		LOD 100
+        LOD 100
 
 		Pass
 		{
 			CGPROGRAM
+
+			// Definition über die Shader die verwendet werden, und wie sie heißen
 			#pragma vertex vert
 			#pragma fragment frag
-			// make fog work
-			#pragma multi_compile_fog
 			
 			#include "UnityCG.cginc"
 
-			struct appdata
-			{
-				float4 vertex : POSITION;
-				float2 uv : TEXCOORD0;
-			};
-
+			// Struct zum Austausch der Daten zwischen Vertex und Fragment Shader
 			struct v2f
 			{
-				float2 uv : TEXCOORD0;
-				UNITY_FOG_COORDS(1)
+				// Weitergabe der konvertierten Vertex Positionen in Homogenen Koordinaten
 				float4 vertex : SV_POSITION;
-			};
 
-			sampler2D _MainTex;
-			float4 _MainTex_ST;
+				// Weitergabe der Textur Koordinaten
+				float2 uv : TEXCOORD0;
+			};
 			
-			v2f vert (appdata v)
+			// Zu verwendende Textur
+            sampler2D _MainTex;
+
+			// VERTEX SHADER
+			// 'appdata_base' ist ein standard struct das genutzt werden kann um den Vertex Shader mit Daten zu füttern
+			// https://docs.unity3d.com/Manual/SL-VertexProgramInputs.html
+			// http://wiki.unity3d.com/index.php?title=Shader_Code
+			v2f vert (appdata_base vertexIn)
 			{
-				v2f o;
-				o.vertex = UnityObjectToClipPos(v.vertex);
-				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-				UNITY_TRANSFER_FOG(o,o.vertex);
-				return o;
+				v2f vertexOut;
+
+				// Transformation der Vertices aus Objekt-Koordinaten in Clip-Koordinaten
+				vertexOut.vertex = UnityObjectToClipPos(vertexIn.vertex);
+
+				// Direkte Weitergabe der interpolierten Texturkoordinaten
+				vertexOut.uv = vertexIn.texcoord;
+
+				
+				return vertexOut;
 			}
-			
-			fixed4 frag (v2f i) : SV_Target
+
+			// FRAGMENT / PIXEL SHADER
+			// Als input erhält er die interpolierten Output-Daten des Vertex-Shaders.
+			// Dieser Typ des Fragment Shaders erfordert eigentlich kein Input, da er für jedes Fragment einfach nur eine Farbe zurück gibt.
+			// Output ist 4d vector der die Farbe des Fragments/Pixels angibt.
+			// SV_Target gibt an, dass es sich shcon um die "Target" Farbe handelt. Alternativ könnte auch das Struct fragmentOut
+			// als Rückgabe des Fragment Shaders verwendet werden.
+			fixed4 frag (v2f fragIn) : SV_Target
 			{
-				// sample the texture
-				fixed4 col = tex2D(_MainTex, i.uv);
-				// apply fog
-				UNITY_APPLY_FOG(i.fogCoord, col);
-				return col;
+				// Greife den pixel der Textur an der Stelle (u;v) ab und setze ihn als Farbe.
+                fixed4 color = tex2D(_MainTex, fragIn.uv);
+
+                return color;
 			}
 			ENDCG
 		}
