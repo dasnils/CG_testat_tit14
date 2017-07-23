@@ -87,18 +87,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\LevelScripts\ThirdPersonOrbitCam.cs" />
-    <Compile Include="Assets\Scripts\PlayerScripts\AimBehaviour.cs" />
-    <Compile Include="Assets\Scripts\PlayerScripts\BasicBehaviour.cs" />
-    <Compile Include="Assets\Scripts\PlayerScripts\FlyBehaviour.cs" />
-    <Compile Include="Assets\Scripts\PlayerScripts\MoveBehaviour.cs" />
+    <Compile Include="Assets\Aufgabe4\heattransformer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Aufgabe2\GrayTextureShader.shader" />
     <None Include="Assets\Aufgabe3\Tiefenbildshader.shader" />
+    <None Include="Assets\Aufgabe4\heat_shader.shader" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
-    <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

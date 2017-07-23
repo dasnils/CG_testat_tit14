@@ -127,6 +127,10 @@
       <Project>{83E3FE09-E6ED-41D5-37E2-E16CF7FAC6F3}</Project>
       <Name>Aufgabe1_FirstPerson.Plugins</Name>
     </ProjectReference>
+    <ProjectReference Include="Aufgabe1_FirstPerson.csproj">
+      <Project>{494F6567-ADA9-723F-9C62-95B14953CA91}</Project>
+      <Name>Aufgabe1_FirstPerson</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
